@@ -4,11 +4,11 @@ app=Flask(__name__)
 
 @app.route('/home')
 def home():
-    return render_templates("homepage.html")
+    return render_template("homepage.html")
 @app.route('/about')
 def about():
-    return render_templates("about.html")
+    return render_template("about.html")
 @app.route('/signin')
 def signin():
-    return render_templates("signin.html")
+    return render_template("signin.html")
 app.run(debug=True)
