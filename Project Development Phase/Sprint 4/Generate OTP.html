@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <span id="otp">OTP VERIFICATION</span>
+    </div><br>
+    <button type="button" id="btn">VERIFICATION</button>
+    <script>
+        document.getElementById("btn").onclick = function(){
+    var num = '1234567890';
+    var OTP = '';
+    for(let i=0;i<4;i++){
+        OTP+=num[Math.floor(Math.random()*10)];
+        document.getElementById("otp").innerHTML = "YOUR ONE TIME PASSCODE : "+OTP;
+    }
+}
+    </script>
+</body>
+</html>
