@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% from "_render_field.html" import render_error_field %}
+
+{% block head %}
+<title>Registration</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/storage.css')}}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+<header>
+  <nav class="navbar navbar-expand-lg navigation-wrap">
+    <div class="container">
+      <a href="/">
+        <img src="{{url_for('static', filename='images/logo.png')}}">
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarText">
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/dashboard">DashBoard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/uploader">Food Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/pictures">Food Details</a>
+          </li>
+          <li>
+            <a class="btn btn-primary ms-4" href="/dashboard" role="button">Back</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="feature section-padding" id="feature">
+  <div class="container-fluid px-0 top-banner1">
+    <div class="container">
+      <div class="feature-heading" style="visibility: visible; animation-name: zoom">
+        <h1>Food <span style="color:#D12B10;">Information</span></h1>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% if foods %}
+{% for food in foods %}
+<div class="card">
+  <img src="{{food[8]}}">
+  <div class="card-body">
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">
+        Show Nutrition Value
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card-body">
+        Food item : {{food[6]}}<br>
+        Calories: {{food[2]}} Kcal<br>
+        Carbs: {{food[3]}} Gm<br>
+        Fat: {{food[4]}} Gm<br>
+        Protein: {{food[5]}} Gm
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endfor %}
+
+{% else %}
+<br>
+<center><h1>No food pictures uploaded</h1></center>
+{% endif %}
+{% endblock %}
