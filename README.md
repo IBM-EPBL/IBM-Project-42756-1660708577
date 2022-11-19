@@ -8,4 +8,21 @@ Team Members:
       2.Kiruthiga M
       3.Santhosh Kumar V
       
+About Project:
+
+    In this project,We have created the Moblile Application to analyse the Nutritional value.
+
+
+Users:
+
+    Everyone can use this application.
+    
+
+
+
+     
+    
+
+    
+      
       
