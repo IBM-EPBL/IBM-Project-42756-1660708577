@@ -1,6 +1,6 @@
 Team ID:PNT2022TMID44221
 
-Team Lead:Sowthika S V
+Team Lead: Sowthika S V
 
 Team Members:
       
